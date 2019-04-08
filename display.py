@@ -148,7 +148,7 @@ class Display(object):
 
     def add(self, name, obj, color=None, opacity=None):
         mapper = vtkPolyDataMapper()
-        mapper.SetInput(obj.GetOutput())
+        mapper.SetInputConnection(obj.GetOutputPort())
         actor = vtkActor()
         actor.SetMapper(mapper)
         if color is not None:
@@ -196,7 +196,7 @@ class MatrixTransform(object):
 
     def __call__(self, source):
         filter = vtkTransformPolyDataFilter()
-        filter.SetInput(source.GetOutput())
+        filter.SetInputConnection(source.GetOutputPort())
         filter.SetTransform(self.transform)
         return filter
 
@@ -221,7 +221,7 @@ cube = vtkCubeSource()
 
 def filter_from_transform(transform, source):
     filter = vtkTransformPolyDataFilter()
-    filter.SetInput(source.GetOutput())
+    filter.SetInputConnection(source.GetOutputPort())
     filter.SetTransform(transform)
     return filter
 
