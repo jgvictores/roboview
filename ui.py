@@ -130,9 +130,9 @@ class JointWidget(object):
 
     def add_to(self, display):
         t = self.frame
-        display.add(id(self), t(x_arrow), color=(1, 0, 0))
-        display.add(id(self), t(y_arrow), color=(0, 1, 0))
-        display.add(id(self), t(z_arrow), color=(0, 0, 1))
+#        display.add(id(self), t(x_arrow), color=(1, 0, 0))
+#        display.add(id(self), t(y_arrow), color=(0, 1, 0))
+#        display.add(id(self), t(z_arrow), color=(0, 0, 1))
         display.add(id(self), t({'rot_x': x_cylinder,
                                  'rot_y': y_cylinder,
                                  'rot_z': z_cylinder}[self.type]))
@@ -170,9 +170,9 @@ class TransJointWidget(object):
              'trans_y': lambda n: rotate_z(pi/2, n),
              'trans_z': lambda n: rotate_y(-pi/2, n)}[self.type]
         t = self.frame
-        display.add(id(self), t(x_arrow), color=(1, 0, 0))
-        display.add(id(self), t(y_arrow), color=(0, 1, 0))
-        display.add(id(self), t(z_arrow), color=(0, 0, 1))
+#        display.add(id(self), t(x_arrow), color=(1, 0, 0))
+#        display.add(id(self), t(y_arrow), color=(0, 1, 0))
+#        display.add(id(self), t(z_arrow), color=(0, 0, 1))
         display.add(id(self), t(dir(hx_cylinder)))
         display.add(id(self), t(dir(translate(-1/40.0, 0, 0, self.len_frame(transx_cylinder)))))
         if self.joint is not None:
@@ -204,9 +204,9 @@ class NoneJointWidget(object):
 
     def add_to(self, display):
         t = self.frame
-        display.add(id(self), t(x_arrow), color=(1, 0, 0))
-        display.add(id(self), t(y_arrow), color=(0, 1, 0))
-        display.add(id(self), t(z_arrow), color=(0, 0, 1))
+#        display.add(id(self), t(x_arrow), color=(1, 0, 0))
+#        display.add(id(self), t(y_arrow), color=(0, 1, 0))
+#        display.add(id(self), t(z_arrow), color=(0, 0, 1))
         display.add(id(self), t(joint_cube))
         if self.joint is not None:
             display.add(None, t(make_link_cylinder(self.joint)), opacity=.3)
@@ -224,9 +224,9 @@ class EndEffectorWidget(object):
 
     def add_to(self, display):
         t = self.frame
-        display.add(id(self), t(x_arrow), color=(1, 0, 0))
-        display.add(id(self), t(y_arrow), color=(0, 1, 0))
-        display.add(id(self), t(z_arrow), color=(0, 0, 1))
+#        display.add(id(self), t(x_arrow), color=(1, 0, 0))
+#        display.add(id(self), t(y_arrow), color=(0, 1, 0))
+#        display.add(id(self), t(z_arrow), color=(0, 0, 1))
         display.add(id(self), t(ef_sphere))
         if self.joint is not None:
             display.add(None, t(make_link_cylinder(self.joint)), opacity=.3)
